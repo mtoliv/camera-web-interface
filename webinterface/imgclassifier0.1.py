@@ -29,9 +29,9 @@ status = None
 lock = Lock()
 #q = queue.Queue(maxsize=1)
 
-''' Load image from socket. Returns OpenCV image '''
+''' Load image from socket. Returns  OpenCV image '''
 def get_file(sock,id,size):
-	#fileName = 'media/images/recent/current.png' 
+	fileName = 'media/images/log' 
 	#len_str = sock.recv(4)  # Get file size
 	#size = struct.unpack('!i', len_str)[0]
 #    print('File size received:', size)
@@ -49,7 +49,16 @@ def get_file(sock,id,size):
 	img = cv2.imdecode(np.asarray(bytearray(f_str)),1)
 	#print(type(img))
 	#print("SAVING MOST RECENT IMAGE")
-	#cv2.imwrite(fileName, img)
+
+
+	#Uncomment following lines to log images on /log/ folder
+	"""
+	date_string = datetime.datetime.now().strftime("%H_%M_%S_%f")[:-4]
+	fileName = fileName + '/' + '%s' % (date_string) + '.png'
+	cv2.imwrite(fileName, img)
+	"""
+
+
 	#cv2.imshow('img',img)
 	return img
 

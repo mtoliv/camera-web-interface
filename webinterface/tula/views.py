@@ -70,7 +70,7 @@ def rejected_list(request):
 
 
 def recent(request):
-	string = "python image_get.py"
+	string = "python3 image_get.py"
 	os.system(string)
 	files = os.listdir('media/images/recent')
 	if files[0][9] == '1':
@@ -93,7 +93,7 @@ def switch(request,file_name):
 	#print(f)
 	f.update(status='rejected')
 	#shutil.move('C:\\Users\\Roberto.Oliveira\\Desktop\\sapec_interface\\mysite\\media\\images\\accepted\\'+file_name,'C:\\Users\\Roberto.Oliveira\\Desktop\\sapec_interface\\mysite\\media\\images\\rejected\\')
-	string = "python imgclassifier0.1.py media/images/accepted/" + file_name +" 1"
+	string = "python3 imgclassifier0.1.py media/images/accepted/" + file_name +" 1"
 	print('Executed "',string, '"to REJECT image')
 	os.system(string)
 	#print(file_name)
@@ -105,7 +105,7 @@ def switch_rejected(request,file_name):
 	#print(f)
 	f.update(status='accepted')
 	#shutil.move('C:\\Users\\Roberto.Oliveira\\Desktop\\sapec_interface\\mysite\\media\\images\\rejected\\'+file_name,'C:\\Users\\Roberto.Oliveira\\Desktop\\sapec_interface\\mysite\\media\\images\\accepted\\')
-	string = "python imgclassifier0.1.py media/images/rejected/" + file_name +" 0"
+	string = "python3 imgclassifier0.1.py media/images/rejected/" + file_name +" 0"
 	print('Executed "',string, '"to ACCEPT image')
 	os.system(string)
 	#print(file_name)
