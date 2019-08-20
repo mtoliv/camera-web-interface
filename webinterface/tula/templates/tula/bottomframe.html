@@ -2,10 +2,24 @@
 <html>
 <header><title>This is title</title></header>
 <body> 
-<script type="text/javascript">
-document.write('<img src="/media/images/recent/{{file}}?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="500" width="500">');
-</script>
-<li>{{file}} </a></li>
-<li>Image was {{file_status}} by classifier</a></li>
+
+
+<div style="float: left;">
+	<script type="text/javascript">
+		document.write('<p style="margin-left:75%; margin-top:50px;"><img src="/media/images/recent/{{file}}?'+Math.random()+' alt="Willmaster.com logo" border="0" height="500" width="500"></p>');
+	</script>
+</div>
+<div style = "float: right;margin-top:270px;margin-right:35%;">
+	<div>
+		Ficheiro: {{file}} 
+	</div>
+	<div>
+		{%if file_status == "Rejected" %}
+			Status: Imagem foi <font color="red">REJEITADA</font> pelo classificador
+		{%elif file_status == "Accepted" %}
+			Status: Imagem foi <font color="green">ACEITE</font> pelo classificador
+		{% endif %}
+	</div>
+</div>
 </body>
 </html>

@@ -4,24 +4,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Minimal Django File Upload Example</title>
     </head>
 
     <body>
         <!-- List of uploaded files -->
-        	<li>{{file_name}}</li>
+        <div>
+        	<h4>{{file_name}}</h4>
         	<script type="text/javascript">
-                     document.write('<img src="/media/images/rejected/{{file_name}}?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="500" width="500">');
-                     document.write('<img src="/media/images/rejected/{{file_name}}chart.png?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="500" width="500">');
+                     document.write('<p style="margin-left:25%; margin-top:50px;float:left;"><img src="/media/images/rejected/{{file_name}}?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="500" width="500"></p>');
+                     document.write('<p style="margin-left:10%; margin-top:50px;"><img src="/media/images/rejected/{{file_name}}chart.png?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="500" width="500"></p>');
                      </script>
+        </div>
         <!-- Upload form. Note enctype attribute! -->
-        <form action="{% url 'tula:switch_rejected' file_name%}" method="post">
-			{% csrf_token %}
-			<input type="submit" value="Change to ACCEPTED" />
-		</form>
-        <form action="{% url 'tula:rejected_list'%}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Back" />
+        <div class = container4>
+			<div>
+				<form action="{% url 'tula:switch_rejected' file_name%}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="ACEITAR" />
+			</form>
+			</div>
+			<div>
+				 <form action="{% url 'tula:rejected_list'%}" method="post">
+		            {% csrf_token %}
+		            <input type="submit" value="Voltar" />
+	        </form>
+			</div>
+		</div>       
     </body>
 
 </html>

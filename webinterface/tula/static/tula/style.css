@@ -19,6 +19,12 @@ h3{
 
 }
 
+h4{ 
+    margin-top:3%;
+    color: #000000;
+    text-align: center;
+}
+
 input[type=submit] {
     padding:5px 15px; 
     background:#ccc; 
@@ -28,7 +34,16 @@ input[type=submit] {
     border-radius: 5px; 
 }
 
-
+#container3 {
+  /*color: white;
+  background: #363636;*/
+  padding: 7em;
+  /*background: #363636;*/
+  flex: 1 1 auto;
+  /*grow vertically*/
+  /*width: 55%;
+  text-align: center;*/
+}
 div.container2{
     margin-left:5%;
 }
@@ -41,9 +56,19 @@ div.container
 
 }
 
+
+div.container4
+{
+    margin-top: 1.1%;
+    text-align: center;
+}
+
 body{
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
+  position: relative;
 }
 
 #footer{
@@ -54,4 +79,16 @@ body{
   background-color: #001a33;
   color: white;
   text-align: center;
+}
+
+#wrapper {
+  display: flex;
+}
+
+#left {
+  flex: 0 0 65%;
+}
+
+#right {
+  flex: 1;
 }

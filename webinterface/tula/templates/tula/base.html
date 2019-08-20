@@ -12,19 +12,19 @@
 			<div style ='float:left'>
 				<form action="{% url 'tula:home'%}" method="post" target="_top">
 					{% csrf_token %}
-				    <input type="submit" value="Home" />
+				    <input type="submit" value="Início" />
 				</form>
 			</div>
 			<div style = 'float:left;'>
 				<form action="{% url 'tula:real_time_view'%}" method="post"  target="_top">
 					{% csrf_token %}
-				    <input type="submit" value="Real Time Monitor" />
+				    <input type="submit" value="Ver Câmara" />
 				</form>
 			</div>
 			<div style = 'float:left;'>
 				<form action="{% url 'tula:train'%}" method="post" target="_top">
 					{% csrf_token %}
-				    <input type="submit" value="Teach AI" />
+				    <input type="submit" value="Treinar Modelo" />
 				</form>
 			</div>
 		</div>
