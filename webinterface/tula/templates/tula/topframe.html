@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'tula/style.css' %}">
+		<div>
+			<h1> Tula Intelligent Interface</h1>
+		</div>
+		<div class = container>
+			<div style ='float:left'>
+				<form action="{% url 'tula:home'%}" method="post" target="_top">
+					{% csrf_token %}
+				    <input type="submit" value="Home" />
+				</form>
+			</div>
+			<div style = 'float:left;'>
+				<form action="{% url 'tula:real_time_view'%}" method="post"  target="_top">
+					{% csrf_token %}
+				    <input type="submit" value="Real Time Monitor" />
+				</form>
+			</div>
+			<div style = 'float:left;'>
+				<form action="{% url 'tula:train'%}" method="post" target="_top">
+					{% csrf_token %}
+				    <input type="submit" value="Teach AI" />
+				</form>
+			</div>
+		</div>
+	<title>TII</title>
+	</head>
+<body>
+Real Time Monitoring
+</body>
+</html>

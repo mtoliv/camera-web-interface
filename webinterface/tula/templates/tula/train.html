@@ -1,0 +1,15 @@
+{% extends 'tula/base.html' %}
+{% block content %}
+{% load static %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h2> Choose classifier result to observe: </h2>
+<form action="{% url 'tula:list_choice' %}" method="post">
+{% csrf_token %}
+	<div class = container2>
+		  <input type="radio" name="status" value="accepted" checked> Accepted<br>
+		  <input type="radio" name="status" value="rejected"> Rejected<br>
+	<input type="submit" value="OK" />
+	</div>
+</form>
+{% endblock %}

@@ -1,0 +1,57 @@
+h1{
+    
+    color: #C25100;
+    text-align: center;
+
+}
+
+h2{
+    color: #C25100;
+    margin-left: 2.5%;
+}
+
+h3{
+    
+    color: #001a33;
+    text-align: center;
+    margin-top:250px;
+    font-size: 500%;
+
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+
+div.container2{
+    margin-left:5%;
+}
+
+
+div.container
+{
+    text-align: center;
+    margin-left:41.2%;
+
+}
+
+body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #001a33;
+  color: white;
+  text-align: center;
+}

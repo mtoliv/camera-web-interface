@@ -1,0 +1,45 @@
+{% extends 'tula/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Minimal Django File Upload Example</title>
+    </head>
+
+    <body>
+        <!-- List of uploaded files -->
+        <form action="{% url 'tula:train'%}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Back" />
+        </form>
+        {% if files %}
+            <ul>
+                {% for document in files %}
+                     <script type="text/javascript">
+                     document.write('<img src="/media/images/accepted/{{document.file_name}}?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="200" width="200">');
+                     document.write('<img src="/media/images/accepted/{{document.file_name}}chart.png?'+Math.random()+'" alt="Willmaster.com logo" border="0" height="200" width="200">');
+                     </script>
+                   <li><a href="{% url 'tula:edit' document.file_name %}"> FILE: {{document.file_name}} | STATUS: {{document.status }}</a></li>
+                        <form action="{% url 'tula:switch' document.file_name%}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="REJECT" />
+                        </form>
+                {% endfor %}
+                <form action="{% url 'tula:train'%}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Back" />
+            </ul>
+        {% else %}
+            <p>No files.</p>
+            <form action="{% url 'tula:train'%}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Back" />
+        {% endif %}
+
+        <!-- Upload form. Note enctype attribute! -->
+        
+    </body>
+
+</html>
+{% endblock %}
