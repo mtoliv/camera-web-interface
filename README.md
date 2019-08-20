@@ -1,6 +1,6 @@
 # camera-web-interface
 
-running the site for testing purposeds
+running the site for testing purposes:
 
 cd webinterface
 python imgclassifier0.1.py
